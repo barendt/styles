@@ -113,6 +113,15 @@
          <name and="text" delimiter=", "/>
       </names>
    </macro>
+   <macro name="sciencey-author">
+      <names variable="author">
+         <name sort-separator=", " name-as-sort-order="first" initialize-with=". " delimiter=", " delimiter-precedes-last="always" and="text"/>
+         <label form="short" prefix=", " suffix="." text-case="capitalize-first" strip-periods="true"/>
+         <substitute>
+            <names variable="editor"/>
+         </substitute>
+      </names>
+   </macro>
    <macro name="contributors">
       <names variable="author">
          <name and="text" name-as-sort-order="first" sort-separator=", " delimiter=", " delimiter-precedes-last="always"/>
@@ -405,11 +414,11 @@
    </citation>
    <bibliography hanging-indent="true" et-al-min="11" et-al-use-first="7" subsequent-author-substitute="———" entry-spacing="0">
       <sort>
-         <key macro="contributors"/>
+         <key macro="sciencey-author"/>
          <key variable="issued"/>
       </sort>
       <layout suffix=".">
-         <text macro="contributors" suffix=". "/>
+         <text macro="sciencey-author" suffix=". "/>
          <text macro="date" suffix=". "/>
          <text macro="title"/>
          <text macro="description"/>
