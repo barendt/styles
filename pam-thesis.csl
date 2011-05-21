@@ -167,7 +167,6 @@
                <text macro="archive"/>
             </else-if>
          </choose>
-         <text variable="DOI" prefix="doi:"/>
          <choose>
             <if type="legal_case" match="none">
                <text variable="URL"/>
